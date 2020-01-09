@@ -8,4 +8,5 @@ function home()
     $news = getNews();
     require_once 'view/home.php';
 }
+
 ?>

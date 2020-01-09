@@ -52,8 +52,8 @@
                         <div class="nav-collapse collapse">
                             <ul class="nav nav-pills ddmenu">
                                 <!-- On commence par afficher les boutons qui s'afficheront, peu importe les événements-->
-                                <li><a href="index.php?action=home">Home</a></li>
-                                <li><a href="index.php?action=displaySnows">Snows</a></li>
+                                <li><a href="view/home.php">Home</a></li>
+                                <li><a href="view/snowboards.php">Snows</a></li>
                             </ul>
                         </div>
                     </div>
