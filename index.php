@@ -1,6 +1,15 @@
 <?php
 require "controler/controler.php";
 
-home();
+switch ($action)
+{
+    case 'home':
+        home();
+        break;
+    case 'snows':
+        snows();
+        break;
+}
+
 
 ?>

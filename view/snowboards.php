@@ -1,6 +1,7 @@
 <?php
 ob_start();
 $title = "RentASnow - Accueil";
+$action = "snows";
 ?>
 
 <!-- ________ SLIDER_____________-->
