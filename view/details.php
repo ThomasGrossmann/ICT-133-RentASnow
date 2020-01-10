@@ -1,18 +1,13 @@
 <?php
 ob_start();
-$title = "RentASnow - Accueil";
+$title = "RentASnow - Détail";
 ?>
 
 <!-- ________ NEWS _____________-->
 <div class="span12">
-    <h1>Les news</h1>
-    <?php foreach ($news as $onepieceofnews) { ?>
-        <div class="row mt-4">
-            <div class="col-2"><?= date('d.M.Y', strtotime($onepieceofnews['date'])) ?></div>
-            <h4 class="col-4"><?= $onepieceofnews['title'] ?></h4>
-        </div>
-        <div class="row ml-5"><?= $onepieceofnews['details'] ?></div>
-    <?php } ?>
+    <h1>Voici quelques détails en plus.</h1>
+
+    <a href="index.php?action=achat&<?= $snow['Modèle']?>" class="btn btn-primary">Acheter</a>
 </div>
 
 

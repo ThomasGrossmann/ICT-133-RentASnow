@@ -39,30 +39,40 @@
 
     <div class="divPanel notop nobottom">
         <div class="row-fluid">
-            <div class="span12">
+            <div class="row">
                 <div id="divLogo" class="pull-left">
-                    <a href="index.php" id="divSiteTitle">Rent A Snow</a><br/>
-                    <a href="index.php" id="divTagLine">La glisse à moindre coût</a>
+                    <a href="index.php?action=home" id="divSiteTitle">Rent A Snow</a><br/>
+                    <a href="index.php?action=snows" id="divTagLine">La glisse à moindre coût</a>
                 </div>
-                <div id="divMenuRight" class="pull-right">
-                    <div class="navbar">
-                        <button type="button" class="btn btn-navbar-highlight btn-large btn-primary" data-toggle="collapse" data-target=".nav-collapse">
-                            NAVIGATION <span class="icon-chevron-down icon-white"></span>
-                        </button>
-                        <div class="nav-collapse collapse">
-                            <ul class="nav nav-pills ddmenu">
-                                <!-- On commence par afficher les boutons qui s'afficheront, peu importe les événements-->
-                                <li><a href="view/home.php">Home</a></li>
-                                <li><a href="view/snowboards.php">Snows</a></li>
-                            </ul>
-                        </div>
-                    </div>
+            </div>
+            <div class="row">
+                <div class="navbar">
+                    <ul class="nav nav-pills">
+                        <!-- On commence par afficher les boutons qui s'afficheront, peu importe les événements-->
+                        <li><a href="index.php?action=home">Home</a></li>
+                        <li><a href="index.php?action=snows">Snows</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
 
-        <div class="contentArea">
+        <!-- ________ SLIDER_____________-->
+        <div class="row-fluid">
+            <div class="camera_full_width">
+                <div id="camera_wrap">
+                    <div data-src="view/images/slider/5.jpg">
+                        <div class="camera_caption fadeFromBottom cap1">Les derniers modèles toujours à disposition.</div>
+                    </div>
+                    <div data-src="view/images/slider/1.jpg">
+                        <div class="camera_caption fadeFromBottom cap2">Découvrez des paysages fabuleux avec des sensations.</div>
+                    </div>
+                    <div data-src="view/images/slider/2.jpg"></div>
+                </div>
+                <br style="clear:both"/>
+            </div>
+        </div>
 
+        <div class="contentArea">
             <div class="divPanel notop page-content">
                 <div class="row-fluid">
                     <div class="span12" id="divMain">
@@ -130,10 +140,10 @@
                 </div>
                 <div class="row text-center">
                     <div class="social_bookmarks">
-                        <a href="#"><i class="social foundicon-facebook"></i> Facebook</a>
-                        <a href=""><i class="social foundicon-twitter"></i> Twitter</a>
-                        <a href="#"><i class="social foundicon-pinterest"></i> Pinterest</a>
-                        <a href="#"><i class="social foundicon-rss"></i> Rss</a>
+                        <a href="#"><i class="social foundicon-facebook"></i> Facebook</a>
+                        <a href=""><i class="social foundicon-twitter"></i> Twitter</a>
+                        <a href="#"><i class="social foundicon-pinterest"></i> Pinterest</a>
+                        <a href="#"><i class="social foundicon-rss"></i> Rss</a>
                     </div>
                 </div>
             </div>

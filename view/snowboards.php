@@ -1,25 +1,21 @@
 <?php
 ob_start();
-$title = "RentASnow - Accueil";
-$action = "snows";
+$title = "RentASnow - Snowboards";
 ?>
 
-<!-- ________ SLIDER_____________-->
-<div class="row-fluid">
-    <div class="camera_full_width">
-        <div id="camera_wrap">
-            <div data-src="view/images/slider/5.jpg">
-                <div class="camera_caption fadeFromBottom cap1">Les derniers modèles toujours à disposition.</div>
-            </div>
-            <div data-src="view/images/slider/1.jpg">
-                <div class="camera_caption fadeFromBottom cap2">Découvrez des paysages fabuleux avec des sensations.</div>
-            </div>
-            <div data-src="view/images/slider/2.jpg"></div>
+<!-- ________ SNOWBOARDS_____________-->
+<div class="span12">
+    <h1>Nos snowboards</h1>
+    <?php foreach ($snows as $snow) { ?>
+        <div class="row mt-4">
+            <div class="col-4"><b>Marque :</b><?= $snow['Marque']?></div>
         </div>
-        <br style="clear:both"/>
-    </div>
+        <div class="row ml-5"><b>Modèle :</b><?= $snow['Modèle']?></div>
+        <div class="row ml-5"><b>Prix :</b><?= $snow['Prix']?></div>
+        <a href="index.php?action=achat&<?= $snow['Modèle']?>" class="btn btn-primary">Acheter</a>
+        <a href="index.php?action=details&<?= $snow['Modèle']?>" class="btn btn-primary">Plus de détails ?</a>
+    <?php } ?>
 </div>
-
 
 
 <script src="assets/carousel/jquery.carouFredSel-6.2.0-packed.js" type="text/javascript"></script>

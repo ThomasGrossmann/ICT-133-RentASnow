@@ -9,4 +9,21 @@ function home()
     require_once 'view/home.php';
 }
 
+function snows()
+{
+    $snows = getSnows();
+    require_once 'view/snowboards.php';
+}
+
+function achat()
+{
+    $achat = getAchat();
+    require_once 'view/achat.php';
+}
+
+function details()
+{
+    $details = getDetails();
+    require_once 'view/details.php';
+}
 ?>
