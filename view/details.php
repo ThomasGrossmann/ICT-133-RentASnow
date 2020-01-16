@@ -9,7 +9,7 @@ ob_start();
 $title = "RentASnow - Détail";
 ?>
 
-<!-- ________ NEWS _____________-->
+<!-- ________ DETAILS _____________-->
 <div class="span12">
     <h1>Voici quelques détails en plus.</h1>
     <?php foreach ($snows as $snow) { ?>

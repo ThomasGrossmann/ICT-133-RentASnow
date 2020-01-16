@@ -14,10 +14,9 @@ $title = "RentASnow - Snowboards";
     <h1>Nos snowboards</h1>
     <?php foreach ($snows as $snow) { ?>
         <div class="row mt-4">
-            <div class="col-4"><b>Marque : </b><?= $snow['Marque']?></div>
+            <div class="col-4"><b>Marque : </b><?= $snow['marque']?></div>
         </div>
-        <div class="row ml-5"><b>Modèle :</b><?= $snow['Modèle']?></div>
-        <div class="row ml-5"><b>Prix :</b><?= $snow['Prix']?></div>
+        <div class="row ml-5"><b>Modèle :</b><?= $snow['modele']?></div>
         <a href="index.php?action=details&<?= $snow['id']?>" class="btn btn-primary">Plus de détails ?</a>
     <?php } ?>
 </div>

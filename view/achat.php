@@ -9,7 +9,7 @@ ob_start();
 $title = "RentASnow - Achat";
 ?>
 
-<!-- ________ACHAT_____________-->
+<!-- ________ LOCATION _____________-->
 <div class="span12">
     <h1>Excellent choix !</h1>
 

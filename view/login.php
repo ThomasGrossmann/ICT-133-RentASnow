@@ -9,6 +9,7 @@ ob_start();
 $title = "RentASnow - Login";
 ?>
 
+<!-- ________ LOGIN _____________-->
 <form class="form-group" method="post" action="index.php?action=home">
     <label>Username</label><br><input type="text" name="username"><br>
     <label>Password</label><br><input type="password" name="password"><br><br>
