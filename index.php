@@ -1,7 +1,15 @@
 <?php
+/*
+ * Programme : Rent A Snow (index)
+ * Auteur : Thomas Grossmann
+ * Date : 16.01.2020
+ */
+
 session_start();
-$_SESSION['username'] = 'TGN';
 require "controler/controler.php";
+$username = $_POST['username'];
+$password = $_POST['password'];
+$_SESSION['username'] = $username;
 $action = $_GET['action'];
 
 switch ($action)
@@ -17,6 +25,9 @@ switch ($action)
         break;
     case 'details' :
         details();
+        break;
+    case 'login' :
+        login();
         break;
     default :
         home();

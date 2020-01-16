@@ -1,4 +1,10 @@
 <?php
+/*
+ * Programme : Rent A Snow (home)
+ * Auteur : Thomas Grossmann
+ * Date : 16.01.2020
+ */
+
 ob_start();
 $title = "RentASnow - Accueil";
 ?>

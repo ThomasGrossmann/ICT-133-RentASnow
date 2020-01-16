@@ -1,4 +1,10 @@
 <?php
+/*
+ * Programme : Rent A Snow (controler)
+ * Auteur : Thomas Grossmann
+ * Date : 16.01.2020
+ */
+
 require_once 'model/model.php';
 
 // This file contains nothing but functions
@@ -25,5 +31,11 @@ function details()
 {
     $details = getDetails();
     require_once 'view/details.php';
+}
+
+function login()
+{
+    $users = getUsers();
+    require_once 'view/login.php';
 }
 ?>

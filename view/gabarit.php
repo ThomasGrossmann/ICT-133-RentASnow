@@ -42,7 +42,17 @@
             <div class="row">
                 <div id="divLogo" class="pull-left">
                     <a href="index.php?action=home" id="divSiteTitle">Rent A Snow</a><br/>
-                    <a href="index.php?action=snows" id="divTagLine">La glisse à moindre coût</a>
+                    <a href="index.php?action=snows" id="divTagLine">La glisse à moindre coût</a><br>
+                    <?php
+                    if (isset($_SESSION['username']))
+                    {
+                        echo "Connecté en tant que ".$_SESSION['username'];
+                        echo "<br><button class='btn-primary'>Se déconnecter</button>";
+                    } else
+                    {
+                        echo "<a href='index.php?action=login'>Se connecter</a>";
+                    }
+                    ?>
                 </div>
             </div>
             <div class="row">

@@ -1,4 +1,10 @@
 <?php
+/*
+ * Programme : Rent A Snow (snowboards)
+ * Auteur : Thomas Grossmann
+ * Date : 16.01.2020
+ */
+
 ob_start();
 $title = "RentASnow - Snowboards";
 ?>
@@ -8,12 +14,11 @@ $title = "RentASnow - Snowboards";
     <h1>Nos snowboards</h1>
     <?php foreach ($snows as $snow) { ?>
         <div class="row mt-4">
-            <div class="col-4"><b>Marque :</b><?= $snow['Marque']?></div>
+            <div class="col-4"><b>Marque : </b><?= $snow['Marque']?></div>
         </div>
         <div class="row ml-5"><b>Modèle :</b><?= $snow['Modèle']?></div>
         <div class="row ml-5"><b>Prix :</b><?= $snow['Prix']?></div>
-        <a href="index.php?action=achat&<?= $snow['Modèle']?>" class="btn btn-primary">Acheter</a>
-        <a href="index.php?action=details&<?= $snow['Modèle']?>" class="btn btn-primary">Plus de détails ?</a>
+        <a href="index.php?action=details&<?= $snow['id']?>" class="btn btn-primary">Plus de détails ?</a>
     <?php } ?>
 </div>
 
