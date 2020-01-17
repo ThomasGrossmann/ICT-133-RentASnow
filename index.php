@@ -7,17 +7,15 @@
 
 session_start();
 require "controler/controler.php";
-//$username = $_POST['username'];
-//$password = $_POST['password'];
-$_SESSION['username'] = $_POST['username'];
+if (isset($_POST['username']) && isset($_POST['password'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+}
 
 $action = $_GET['action'];
 
 switch ($action)
 {
-    case 'home' :
-        home();
-        break;
     case 'snows' :
         snows();
         break;
@@ -29,6 +27,9 @@ switch ($action)
         break;
     case 'login' :
         login();
+        break;
+    case "trylogin":
+        trylogin($username, $password);
         break;
     default :
         home();

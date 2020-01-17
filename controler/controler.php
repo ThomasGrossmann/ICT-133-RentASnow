@@ -38,4 +38,16 @@ function login()
     $users = getUsers();
     require_once 'view/login.php';
 }
+
+function trylogin($username, $password)
+{
+    $listUsers = getUsers();
+    foreach ($listUsers as $userinrun) {    //scanner toutes les personnes inscrites.
+        if ($username == $userinrun['username'] && $password == $userinrun['password']) {
+            $_SESSION['username'] = $username;
+        }
+    }
+
+    require_once "view/home.php";
+}
 ?>

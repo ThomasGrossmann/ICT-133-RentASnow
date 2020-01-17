@@ -17,7 +17,7 @@ $title = "RentASnow - Login";
 </form>
 <?php
 if (isset($_POST['Submit'])) {
-    $_SESSION['username'] = $_POST['username'];
+    $_SESSION['username'] = $username;
 }
 ?>
 
