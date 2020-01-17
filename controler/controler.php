@@ -23,13 +23,13 @@ function snows()
 
 function achat()
 {
-    $achat = getAchat();
+    $achat = getSnows();
     require_once 'view/achat.php';
 }
 
 function details()
 {
-    $details = getDetails();
+    $details = getSnows();
     require_once 'view/details.php';
 }
 

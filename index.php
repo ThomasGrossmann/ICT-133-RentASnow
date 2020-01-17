@@ -7,9 +7,10 @@
 
 session_start();
 require "controler/controler.php";
-$username = $_POST['username'];
-$password = $_POST['password'];
-$_SESSION['username'] = $username;
+//$username = $_POST['username'];
+//$password = $_POST['password'];
+$_SESSION['username'] = $_POST['username'];
+
 $action = $_GET['action'];
 
 switch ($action)

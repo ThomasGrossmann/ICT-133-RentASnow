@@ -15,6 +15,11 @@ $title = "RentASnow - Login";
     <label>Password</label><br><input type="password" name="password"><br><br>
     <button class="btn-primary" type="submit">Se connecter</button>
 </form>
+<?php
+if (isset($_POST['Submit'])) {
+    $_SESSION['username'] = $_POST['username'];
+}
+?>
 
 <script src="assets/carousel/jquery.carouFredSel-6.2.0-packed.js" type="text/javascript"></script>
 <script src="assets/camera/scripts/camera.min.js" type="text/javascript"></script>

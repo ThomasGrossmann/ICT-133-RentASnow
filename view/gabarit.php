@@ -43,16 +43,6 @@
                 <div id="divLogo" class="pull-left">
                     <a href="index.php?action=home" id="divSiteTitle">Rent A Snow</a><br/>
                     <a href="index.php?action=snows" id="divTagLine">La glisse à moindre coût</a><br>
-                    <?php
-                    if (isset($_SESSION['username']))
-                    {
-                        echo "Connecté en tant que ".$_SESSION['username'];
-                        echo "<br><button class='btn-primary'>Se déconnecter</button>";
-                    } else
-                    {
-                        echo "<a href='index.php?action=login'>Se connecter</a>";
-                    }
-                    ?>
                 </div>
             </div>
             <div class="row">
@@ -61,6 +51,16 @@
                         <!-- On commence par afficher les boutons qui s'afficheront, peu importe les événements-->
                         <li><a href="index.php?action=home">Home</a></li>
                         <li><a href="index.php?action=snows">Snows</a></li>
+                        <?php
+                        if (isset($_SESSION['username']))
+                        {
+                            echo "Connecté en tant que ".$_SESSION['username'];
+                            echo "<br><li><a href='index.php?action=home'>Se déconnecter</a></li>";
+                        } else
+                        {
+                            echo "<li><a href='index.php?action=login'>Se connecter</a></li>";
+                        }
+                        ?>
                     </ul>
                 </div>
             </div>
