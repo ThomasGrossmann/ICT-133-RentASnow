@@ -18,7 +18,7 @@ $title = "RentASnow - Snowboards";
         echo "<thead><tr><th>Marque</th><th>Modèle</th><th>Disponible ?</th><th>(Cliquer sur l'image pour plus de détails)</th></tr></thead><tbody>";
         foreach ($snows as $snow)
         {
-            echo "<tr><td>". $snow['marque'] . "</td><td>" . $snow['modele'] . "</td><td>" . $snow['disponible'] ."</td><td><a href='index.php?action=details&".$snow['id']."'><img src='view/Images/".$snow['smallimage']."'</a></td>";
+            echo "<tr><td>". $snow['marque'] . "</td><td>" . $snow['modele'] . "</td><td>" . $snow['disponible'] ."</td><td><a href='index.php?action=details&detail=".$snow['id']."'><img src='view/Images/".$snow['smallimage']."'</a></td>";
         }
     ?>
         </tbody>

@@ -27,9 +27,13 @@ function achat()
     require_once 'view/achat.php';
 }
 
-function details()
+function  details()
 {
     $details = getSnows();
+    if (isset($_GET['detail']) == true)
+    {
+        $displaySnow = $_GET['detail'];
+    }
     require_once 'view/details.php';
 }
 
@@ -39,15 +43,4 @@ function login()
     require_once 'view/login.php';
 }
 
-function trylogin($username, $password)
-{
-    $listUsers = getUsers();
-    foreach ($listUsers as $userinrun) {    //scanner toutes les personnes inscrites.
-        if ($username == $userinrun['username'] && $password == $userinrun['password']) {
-            $_SESSION['username'] = $username;
-        }
-    }
-
-    require_once "view/home.php";
-}
 ?>

@@ -12,10 +12,12 @@ $title = "RentASnow - Détail";
 <!-- ________ DETAILS _____________-->
 <div class="span12">
     <h1>Voici quelques détails en plus.</h1>
-
-    <a href="index.php?action=achat&<?= $snow['id']?>" class="btn btn-primary">Louer</a>
+    <?php
+    var_dump($snows['id']);
+    echo "<table class='table table-bordered'><thead><tr><th>Disponible ?</th><th>Marque</th><th>Modèle</th><th>Date de retour</th></tr></thead><tbody><tr><td>".$snows['id']['disponible']."</td><td>".$snows['marque']."</td><td>".$snows['modele']."</td><td>".$snows['dateretour']."</td></tr></tbody></table>";
+    ?>
+    <a href="index.php?action=achat&=<?= $snows['id']?>" class="btn btn-primary">Louer</a>
 </div>
-
 
 <script src="assets/carousel/jquery.carouFredSel-6.2.0-packed.js" type="text/javascript"></script>
 <script src="assets/camera/scripts/camera.min.js" type="text/javascript"></script>
