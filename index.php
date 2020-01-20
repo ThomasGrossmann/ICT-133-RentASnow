@@ -7,11 +7,6 @@
 
 session_start();
 require "controler/controler.php";
-if (isset($_POST['username']) && isset($_POST['password'])) {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-}
-$_SESSION['username'] = $username;
 
 $action = $_GET['action'];
 
@@ -22,6 +17,12 @@ switch ($action)
         break;
     case 'achat' :
         achat();
+        break;
+    case 'logout':
+        disconnect();
+        break;
+    case'connect':
+        connect();
         break;
     case 'details' :
         details();

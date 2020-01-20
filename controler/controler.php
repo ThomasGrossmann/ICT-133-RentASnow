@@ -30,17 +30,32 @@ function achat()
 function  details()
 {
     $details = getSnows();
-    if (isset($_GET['detail']) == true)
-    {
-        $displaySnow = $_GET['detail'];
-    }
+    $displaySnow = $_GET['detail'];
     require_once 'view/details.php';
+}
+
+function connect()
+{
+    if (isset($_POST['submit'])) {
+        $username = $_POST['name'];
+        $password = $_POST['pwd'];
+    }
+    if ($username == 'Thomas' && $password == '1234567') {
+        $_SESSION['username'] = $username;
+    } else {
+        require_once 'view/login.php';
+    }
+    require_once 'view/home.php';
 }
 
 function login()
 {
-    $users = getUsers();
     require_once 'view/login.php';
 }
 
+function disconnect()
+{
+    unset($_SESSION['username']);
+    require_once 'view/login.php';
+}
 ?>

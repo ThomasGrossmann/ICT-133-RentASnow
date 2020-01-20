@@ -13,7 +13,6 @@ $title = "RentASnow - Détail";
 <div class="span12">
     <h1>Voici quelques détails en plus.</h1>
     <?php
-    var_dump($snows['id']);
     echo "<table class='table table-bordered'><thead><tr><th>Disponible ?</th><th>Marque</th><th>Modèle</th><th>Date de retour</th></tr></thead><tbody><tr><td>".$snows['id']['disponible']."</td><td>".$snows['marque']."</td><td>".$snows['modele']."</td><td>".$snows['dateretour']."</td></tr></tbody></table>";
     ?>
     <a href="index.php?action=achat&=<?= $snows['id']?>" class="btn btn-primary">Louer</a>
