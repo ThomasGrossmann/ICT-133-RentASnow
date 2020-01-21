@@ -2,7 +2,7 @@
 /*
  * Programme : Rent A Snow (controler)
  * Auteur : Thomas Grossmann
- * Date : 16.01.2020
+ * Date : 21.01.2020
  */
 
 require_once 'model/model.php';
@@ -30,7 +30,10 @@ function achat()
 function  details()
 {
     $details = getSnows();
-    $displaySnow = $_GET['detail'];
+    if (isset($_GET['detail']))
+    {
+        $displayDetail = $_GET['detail'];
+    }
     require_once 'view/details.php';
 }
 

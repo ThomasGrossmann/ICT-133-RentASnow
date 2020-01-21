@@ -1,6 +1,6 @@
 [
   {
-	"id" : "1",
+    "id" : 1,
     "modele": "B101",
     "marque": "Burton",
     "bigimage": "B101.jpg",
@@ -8,7 +8,7 @@
     "dateretour": "",
     "disponible": "Oui"
   },
-  {	
+  {
 	"id" : "2",
     "modele": "B126",
     "marque": "Free Thinker",

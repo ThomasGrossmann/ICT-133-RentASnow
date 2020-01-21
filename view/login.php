@@ -2,7 +2,7 @@
 /*
  * Programme : Rent A Snow (login)
  * Auteur : Thomas Grossmann
- * Date : 16.01.2020
+ * Date : 21.01.2020
  */
 
 ob_start();

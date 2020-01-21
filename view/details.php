@@ -2,20 +2,19 @@
 /*
  * Programme : Rent A Snow (details)
  * Auteur : Thomas Grossmann
- * Date : 16.01.2020
+ * Date : 21.01.2020
  */
 
 ob_start();
 $title = "RentASnow - Détail";
 ?>
-
 <!-- ________ DETAILS _____________-->
 <div class="span12">
     <h1>Voici quelques détails en plus.</h1>
     <?php
-    echo "<table class='table table-bordered'><thead><tr><th>Disponible ?</th><th>Marque</th><th>Modèle</th><th>Date de retour</th></tr></thead><tbody><tr><td>".$snows['id']['disponible']."</td><td>".$snows['marque']."</td><td>".$snows['modele']."</td><td>".$snows['dateretour']."</td></tr></tbody></table>";
+    echo "<table class='table table-bordered'><thead><tr><th>Disponible ?</th><th>Marque</th><th>Modèle</th><th>Date de retour</th></tr></thead><tbody><tr><td>".$snows['disponible']."</td><td>".$snows['marque']."</td><td>".$snows['modele']."</td><td>".$snows['dateretour']."</td></tr></tbody></table>";
     ?>
-    <a href="index.php?action=achat&=<?= $snows['id']?>" class="btn btn-primary">Louer</a>
+    <a href="index.php?action=achat&location=<?= $snows['id']?>" class="btn btn-primary">Louer</a>
 </div>
 
 <script src="assets/carousel/jquery.carouFredSel-6.2.0-packed.js" type="text/javascript"></script>
