@@ -8,8 +8,9 @@
 session_start();
 require "controler/controler.php";
 
-$action = $_GET['action'];
-
+if (isset($_GET['action'])) {
+    $action = $_GET['action'];
+}
 switch ($action)
 {
     case 'snows' :
@@ -18,8 +19,8 @@ switch ($action)
     case 'achat' :
         achat();
         break;
-    case 'logout':
-        disconnect();
+    case 'deconnexion':
+        deconnexion();
         break;
     case'connect':
         connect();

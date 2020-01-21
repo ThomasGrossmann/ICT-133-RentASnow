@@ -45,7 +45,7 @@ function connect()
     } else {
         require_once 'view/login.php';
     }
-    require_once 'view/home.php';
+    home();
 }
 
 function login()
@@ -53,9 +53,10 @@ function login()
     require_once 'view/login.php';
 }
 
-function disconnect()
+function deconnexion()
 {
     unset($_SESSION['username']);
-    require_once 'view/login.php';
+    unset($_SESSION['pwd']);
+    home();
 }
 ?>

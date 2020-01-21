@@ -13,7 +13,7 @@ function getNews()
 
 function getSnows()
 {
-    return json_decode(file_get_contents("model/dataStorage/Snows.json"), true);
+    return json_decode(file_get_contents("model/dataStorage/snows.json"), true);
 }
 
 function getUsers()
