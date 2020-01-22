@@ -13,14 +13,45 @@ $title = "RentASnow - Snowboards";
 <div class="span12">
     <h1>Nos snowboards</h1>
     <table class="table table-bordered">
-        <h3>Nous proposons actuellement <?=count($snows)?> snowboards</h3>
-        <thead><tr><th>Marque</th><th>Modèle</th><th>Disponible ?</th><th>(Cliquer sur l'image pour plus de détails)</th></tr></thead><tbody>
-        <?php foreach ($snows as $snow)
-        {?>
-        <tr><td><?=$snow['marque']?></td><td><?=$snow['modele']?></td><td><?=$snow['disponible']?></td><td><a href='index.php?action=details&detail=<?=$snow['id']?>'><img src='view/Images/<?=$snow['smallimage']?>'</a></td>
-        </tbody>
         <?php
-        }?>
+        echo "<h3>Nous proposons actuellement " . count($snows) . " snowboards</h3>";
+        ?>
+        <thead>
+        <tr>
+            <th>Marque</th>
+            <th>Modèle</th>
+            <th>Disponible ?</th>
+            <th>(Cliquer sur l'image pour plus de détails)</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php
+        foreach ($snows as $snow) {
+            ?>
+
+            <tr>
+                <td>
+                    <?= $snow['marque']; ?>
+                </td>
+                <td>
+                    <?= $snow['modele']; ?>
+                </td>
+                <td>
+                    <?= $snow['disponible']; ?>
+                </td>
+                <td>
+                    <form method="post" action="index.php?action=details">
+                        <input type="hidden" name="id" value="<?= $snow['id']?>">
+                        <input type="image" src="view/images/<?= $snow['smallimage']?>" alt="Submit" >
+                    </form>
+                </td>
+
+            </tr>
+
+            <?php
+        }
+        ?>
+        </tbody>
     </table>
 </div>
 
