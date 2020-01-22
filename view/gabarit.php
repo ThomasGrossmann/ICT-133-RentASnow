@@ -81,6 +81,7 @@
             </div>
         </div>
 
+        <!-- ________ CONTENU DE LA PAGE_____________-->
         <div class="contentArea">
             <div class="divPanel notop page-content">
                 <div class="row-fluid">
