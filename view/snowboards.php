@@ -13,15 +13,14 @@ $title = "RentASnow - Snowboards";
 <div class="span12">
     <h1>Nos snowboards</h1>
     <table class="table table-bordered">
-    <?php
-        echo "<h3>Nous proposons actuellement ".count($snows) . " snowboards</h3>";
-        echo "<thead><tr><th>Marque</th><th>Modèle</th><th>Disponible ?</th><th>(Cliquer sur l'image pour plus de détails)</th></tr></thead><tbody>";
-        foreach ($snows as $snow)
-        {
-            echo "<tr><td>". $snow['marque'] . "</td><td>" . $snow['modele'] . "</td><td>" . $snow['disponible'] ."</td><td><a href='index.php?action=details&detail=".$snow['id']."'><img src='view/Images/".$snow['smallimage']."'</a></td>";
-        }
-    ?>
+        <h3>Nous proposons actuellement <?=count($snows)?> snowboards</h3>
+        <thead><tr><th>Marque</th><th>Modèle</th><th>Disponible ?</th><th>(Cliquer sur l'image pour plus de détails)</th></tr></thead><tbody>
+        <?php foreach ($snows as $snow)
+        {?>
+        <tr><td><?=$snow['marque']?></td><td><?=$snow['modele']?></td><td><?=$snow['disponible']?></td><td><a href='index.php?action=details&detail=<?=$snow['id']?>'><img src='view/Images/<?=$snow['smallimage']?>'</a></td>
         </tbody>
+        <?php
+        }?>
     </table>
 </div>
 

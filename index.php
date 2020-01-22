@@ -35,5 +35,4 @@ switch ($action)
         home();
         break;
 }
-
 ?>

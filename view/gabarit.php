@@ -50,12 +50,11 @@
                     <ul class="nav nav-pills">
                         <!-- On commence par afficher les boutons qui s'afficheront, peu importe les événements-->
                         <li><a href="index.php?action=home">Home</a></li>
-                        <li><a href="index.php?action=snows">Snows</a></li>
-                        <?php
+                        <li><a href="index.php?action=snows">Snows</a></li><?php
                         if (isset($_SESSION['username']))
                         {
-                            echo "Connecté en tant que : ".$_SESSION['username'];
                             echo "<br><li><a href='index.php?action=deconnexion'>Se déconnecter</a></li>";
+                            echo "<div class='float-right'>Connecté en tant que : ".$_SESSION['username']."</div>";
                         } else
                         {
                             echo "<li><a href='index.php?action=login'>Se connecter</a></li>";
