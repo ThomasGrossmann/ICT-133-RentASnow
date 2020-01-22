@@ -11,6 +11,12 @@ require "controler/controler.php";
 if (isset($_GET['action'])) {
     $action = $_GET['action'];
 }
+
+if (isset($_POST['submit'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+}
+
 switch ($action)
 {
     case 'snows' :
@@ -23,7 +29,7 @@ switch ($action)
         deconnexion();
         break;
     case'connect':
-        connect();
+        connect($username, $password);
         break;
     case 'details' :
         details();

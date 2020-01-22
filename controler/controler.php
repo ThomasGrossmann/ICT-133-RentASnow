@@ -37,12 +37,8 @@ function details()
     require_once 'view/details.php';
 }
 
-function connect()
+function connect($username, $password)
 {
-    if (isset($_POST['submit'])) {
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-    }
     if ($username == 'Thomas' && $password == '1234567') {
         $_SESSION['username'] = $username;
     } else {

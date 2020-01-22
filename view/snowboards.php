@@ -15,16 +15,16 @@ $title = "RentASnow - Snowboards";
     <table class="table table-bordered">
         <h3>Nous proposons actuellement <?=count($snows)?> snowboards</h3>
         <thead>
-            <tr><th>Marque</th><th>Modèle</th><th>Disponible ?</th><th>(Cliquer sur l'image pour plus de détails)</th></tr>
+            <tr><th>Marque</th><th>Modèle</th><th>(Cliquer sur l'image pour plus de détails)</th></tr>
         </thead>
         <tbody>
         <?php
-        foreach ($snows as $snow) {
-            ?>
-            <tr><td><?= $snow['marque']?></td><td><?= $snow['modele']?></td><td><?= $snow['disponible']?></td><td>
+        foreach ($snows as $snow)
+        {?>
+            <tr><td><?=$snow['marque']?></td><td><?=$snow['modele']?></td><td>
                     <form method="post" action="index.php?action=details">
-                        <input type="hidden" name="id" value="<?= $snow['id']?>">
-                        <input type="image" src="view/images/<?= $snow['smallimage']?>" alt="Submit" >
+                        <input type="hidden" name="id" value="<?=$snow['id']?>">
+                        <input type="image" src="view/images/<?=$snow['smallimage']?>" alt="Submit" >
                     </form>
                 </td></tr>
             <?php
