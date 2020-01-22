@@ -30,10 +30,6 @@ function achat()
 function details()
 {
     $details = getSnows();
-    if (isset($_GET['detail']))
-    {
-        $displayDetail = $_GET['detail'];
-    }
     require_once 'view/details.php';
 }
 
