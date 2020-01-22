@@ -13,44 +13,18 @@ $title = "RentASnow - Détail";
     <h1>Voici quelques détails en plus.</h1>
     <table class='table table-bordered'>
         <thead>
-        <tr>
-            <th>Disponible ?</th>
-            <th>Marque</th>
-            <th>Modèle</th>
-            <th>Date de retour</th>
-        </tr>
+            <tr><th>Disponible ?</th><th>Marque</th><th>Modèle</th><th>Date de retour</th></tr>
         </thead>
         <tbody>
-
-        <?php
-        foreach ($details as $detail) {
-            if ($detail['id'] == $_POST['id']) {
-
-
-                ?>
-
-                <tr>
-                    <td>
-                        <?= $detail['disponible']; ?>
-                    </td>
-                    <td>
-                        <?= $detail['marque']; ?>
-                    </td>
-                    <td>
-                        <?= $detail['modele']; ?>
-                    </td>
-                    <td>
-                        <?= $detail['dateretour']; ?>
-                    </td>
-
-                </tr>
-
+        <?php foreach ($details as $detail)
+        {
+            if ($detail['id'] == $_POST['id'])
+            {?>
+                <tr><td><?= $detail['disponible']?></td><td><?= $detail['marque']?></td><td><?= $detail['modele']?></td><td><?= $detail['dateretour']?></td></tr>
                 <?php
             }
         }
         ?>
-
-
         </tbody>
     </table>
     <a href="index.php?action=achat&location=<?= $snows['id']?>" class="btn btn-primary">Louer</a>

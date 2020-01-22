@@ -27,7 +27,7 @@ function achat()
     require_once 'view/achat.php';
 }
 
-function  details()
+function details()
 {
     $details = getSnows();
     if (isset($_GET['detail']))
@@ -40,8 +40,8 @@ function  details()
 function connect()
 {
     if (isset($_POST['submit'])) {
-        $username = $_POST['name'];
-        $password = $_POST['pwd'];
+        $username = $_POST['username'];
+        $password = $_POST['password'];
     }
     if ($username == 'Thomas' && $password == '1234567') {
         $_SESSION['username'] = $username;
