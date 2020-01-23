@@ -43,6 +43,9 @@ switch ($action)
     case 'login' :
         login();
         break;
+    case 'inscription':
+        inscription($username, $password);
+        break;
     default :
         home();
         break;

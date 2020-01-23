@@ -12,7 +12,8 @@ $title = "RentASnow - Login";
 <form class="form-group" method="post" action="index.php?action=connect">
     <label>Username</label><br><input class="form-group form-control" type="text" name="username" required><br>
     <label>Password</label><br><input class="form-group form-control" type="password" name="password" required><br><br>
-    <button class="btn-primary" type="submit" name="submit">Se connecter</button>
+    <button class="btn btn-primary" type="submit" name="submit">Se connecter</button>
+    <a href="index.php?action=newAccount" class="btn btn-primary">Créer un compte</a>
 </form>
 
 <script src="assets/carousel/jquery.carouFredSel-6.2.0-packed.js" type="text/javascript"></script>

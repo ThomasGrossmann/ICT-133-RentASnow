@@ -37,7 +37,7 @@ function details()
     require_once 'view/details.php';
 }
 
-//Fonction permettant de se connecter au site de l'enregistrer dans la session et de revenir à la page home
+//Fonction permettant de se connecter au site, de l'enregistrer dans la session et de revenir à la page home
 function connect($username, $password)
 {
     $User = getUser($username, $password);
@@ -54,6 +54,12 @@ function connect($username, $password)
 function login()
 {
     require_once 'view/login.php';
+}
+
+//Fonction permettant de créer un nouvel utilisateur et de l'inscrire dans le fichier Users.json
+function inscription($username, $password)
+{
+
 }
 
 //Fonction permettant de supprimer la session actuelle et d'afficher la page home

@@ -32,4 +32,10 @@ function getUser($username, $password)
         }
     }
 }
+
+function NewUser($username, $password)
+{
+    $User = getUsers($username, $password);
+
+}
 ?>
