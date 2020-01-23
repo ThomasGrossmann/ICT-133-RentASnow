@@ -54,7 +54,7 @@
                         if (isset($_SESSION['username']))
                         {
                             echo "<br><li><a href='index.php?action=deconnexion'>Se déconnecter</a></li>";
-                            echo "Connecté en tant que : ".$_SESSION['username'];
+                            ?>Connecté en tant que : <?=$_SESSION['username'];
                         } else
                         {
                             echo "<li><a href='index.php?action=login'>Se connecter</a></li>";

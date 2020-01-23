@@ -10,8 +10,8 @@ $title = "RentASnow - Login";
 ?>
 <!-- ________ LOGIN _____________-->
 <form class="form-group" method="post" action="index.php?action=connect">
-    <label>Username</label><br><input type="text" name="username" required><br>
-    <label>Password</label><br><input type="password" name="password" required><br><br>
+    <label>Username</label><br><input class="form-group form-control" type="text" name="username" required><br>
+    <label>Password</label><br><input class="form-group form-control" type="password" name="password" required><br><br>
     <button class="btn-primary" type="submit" name="submit">Se connecter</button>
 </form>
 

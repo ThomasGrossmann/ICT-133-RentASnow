@@ -19,7 +19,7 @@ $title = "RentASnow - Snowboards";
         </thead>
         <tbody>
         <?php
-        foreach ($snows as $snow)
+        foreach ($snows as $snow)       //Boucle qui affiche la liste de snowboards
         {?>
             <tr><td><?=$snow['marque']?></td><td><?=$snow['modele']?></td><td>
                     <form method="post" action="index.php?action=details">

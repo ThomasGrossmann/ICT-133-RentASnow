@@ -37,15 +37,17 @@ function details()
     require_once 'view/details.php';
 }
 
-//Fonction permettant de se connecter au site (pour le moment avec un seul utilisateur) de l'enregistrer dans la session et de revenir à la page home
+//Fonction permettant de se connecter au site de l'enregistrer dans la session et de revenir à la page home
 function connect($username, $password)
 {
-    if ($username == 'Thomas' && $password == '1234567') {
+    $User = getUser($username, $password);
+    if ($User['password'] == $password && $User['username'] == $username) {
         $_SESSION['username'] = $username;
+        $_SESSION['password'] = $password;
+        home();
     } else {
-        require_once 'view/login.php';
+        login();
     }
-    home();
 }
 
 //Fonction permettant d'afficher la page login
@@ -58,7 +60,8 @@ function login()
 function deconnexion()
 {
     unset($_SESSION['username']);
-    unset($_SESSION['pwd']);
+    unset($_SESSION['password']);
     home();
 }
+
 ?>

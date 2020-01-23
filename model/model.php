@@ -22,4 +22,14 @@ function getUsers()
 {
     return json_decode(file_get_contents("model/dataStorage/Users.json"), true);
 }
+
+function getUser($username, $password)
+{
+    $listUsers = getUsers();
+    foreach ($listUsers as $user) {
+        if ($user['username'] == $username) {
+            return $user;
+        }
+    }
+}
 ?>
