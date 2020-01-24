@@ -32,7 +32,7 @@ switch ($action)
         snows();
         break;
     case 'achat' :
-        MajLocation($id);
+        //MajLocation($id);     //Temtative de mise à jour de l'état de location
         achat();
         break;
     case 'deconnexion':

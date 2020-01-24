@@ -41,7 +41,7 @@ function details()
 function connect($username, $password)
 {
     $User = getUser($username, $password);
-    if ($User['password'] == $password && $User['username'] == $username) {
+    if ($User['password'] == $password && $User['username'] == $username) {     //if (password_verify($password, $User['password']))
         $_SESSION['username'] = $username;
         $_SESSION['password'] = $password;
         home();
@@ -63,6 +63,7 @@ function newAccount()
 
 function inscription($newusername, $newpassword, $employe)
 {
+    //$hash = password_hash($newpassword, PASSWORD_DEFAULT);        //Tentative de hash du password
     if ($employe == "on") {
         $employe = true;
     } else {

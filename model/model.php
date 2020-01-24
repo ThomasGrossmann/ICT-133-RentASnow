@@ -47,11 +47,17 @@ function NewUser($newusername, $newpassword, $employe)
     file_put_contents("model/dataStorage/Users.json", json_encode($User));
 }
 
-//Fonction permettant de changer l'état d'un snowboard en non disponible
+/*Fonction permettant de changer l'état d'un snowboard en non disponible
 function MajLocation($id)
 {
     $snows = getSnows();
-
+    foreach ($snows as $snow)
+    {
+        if ($snow['id'] == $id)
+        {
+            $snows[$id]['disponible'] = "Non";
+        }
+    }
     file_put_contents('model/dataStorage/snows.json', json_encode($snows));
-}
+}*/
 ?>
