@@ -56,10 +56,15 @@ function login()
     require_once 'view/login.php';
 }
 
-//Fonction permettant de créer un nouvel utilisateur et de l'inscrire dans le fichier Users.json
-function inscription($username, $password)
+function newAccount()
 {
+    require_once 'view/inscription.php';
+}
 
+function inscription($newusername, $newpassword, $employe)
+{
+    NewUser($newusername, $newpassword, $employe);
+    login();
 }
 
 //Fonction permettant de supprimer la session actuelle et d'afficher la page home
@@ -67,6 +72,7 @@ function deconnexion()
 {
     unset($_SESSION['username']);
     unset($_SESSION['password']);
+    unset($_SESSION['employe']);
     home();
 }
 

@@ -23,7 +23,8 @@ function getUsers()
     return json_decode(file_get_contents("model/dataStorage/Users.json"), true);
 }
 
-function getUser($username, $password)
+//Fonction permettant de ressortir un utilisateur via son username afin de vérifier la connection
+function getUser($username)
 {
     $listUsers = getUsers();
     foreach ($listUsers as $user) {
@@ -33,9 +34,16 @@ function getUser($username, $password)
     }
 }
 
-function NewUser($username, $password)
+//Fonction permettant de créer un nouvel utilisateur et de l'inscrire dans le fichier Users.json
+function NewUser($newusername, $newpassword, $employe)
 {
-    $User = getUsers($username, $password);
-
+    $User = getUsers();
+    $addUser = [
+        'username' => $newusername,
+        'password' => $newpassword,
+        'employe' => $employe
+    ];
+    $User[] = $addUser;
+    file_put_contents("model/dataStorage/Users.json", json_encode($User));
 }
 ?>

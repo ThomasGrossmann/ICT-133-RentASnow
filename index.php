@@ -17,6 +17,11 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     $password = $_POST['password'];
 }
 
+$newusername = $_POST['newusername'];
+$newpassword = $_POST['newpassword'];
+$employe = $_POST['employe'];
+
+
 //Switch pour afficher la page en fonction de l'action donnée dans la Query String
 switch ($action)
 {
@@ -29,13 +34,8 @@ switch ($action)
     case 'deconnexion':
         deconnexion();
         break;
-    case'connect':
-        if (isset($username, $password))
-        {
-            connect($username, $password);      //Donne le username et le password en tant que paramètres de la fonction pour se connecter
-        } else {
-            home();
-        }
+    case'connect' :
+        connect($username, $password);      //Donne le username et le password en tant que paramètres de la fonction pour se connecter
         break;
     case 'details' :
         details();
@@ -43,8 +43,11 @@ switch ($action)
     case 'login' :
         login();
         break;
+    case 'newAccount' :
+        newAccount();
+        break;
     case 'inscription':
-        inscription($username, $password);
+        inscription($newusername, $newpassword, $employe);
         break;
     default :
         home();
