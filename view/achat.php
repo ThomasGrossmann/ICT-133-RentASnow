@@ -6,7 +6,7 @@
  */
 
 ob_start();
-$title = "RentASnow - Achat";
+$title = "RentASnow - Location";
 ?>
 
 <!-- ________ LOCATION _____________-->

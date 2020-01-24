@@ -53,7 +53,7 @@
                         <li><a href="index.php?action=snows">Snows</a></li><?php
                         if (isset($_SESSION['username']))
                         {
-                            echo "<br><li><a href='index.php?action=deconnexion'>Se déconnecter</a></li>";
+                            echo "<li><a href='index.php?action=deconnexion'>Se déconnecter</a></li>";
                             ?>Connecté en tant que : <?=$_SESSION['username'];
                         } else
                         {

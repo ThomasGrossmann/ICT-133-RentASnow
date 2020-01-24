@@ -63,6 +63,11 @@ function newAccount()
 
 function inscription($newusername, $newpassword, $employe)
 {
+    if ($employe == "on") {
+        $employe = true;
+    } else {
+        $employe = false;
+    }
     NewUser($newusername, $newpassword, $employe);
     login();
 }

@@ -13,5 +13,10 @@
     "username": "miguel",
     "password": "miguelmdp",
     "employe": false
+  },
+  {
+    "username": "Thomas",
+    "password": "12345",
+    "employe": true
   }
 ]

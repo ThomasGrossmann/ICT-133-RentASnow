@@ -17,10 +17,13 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     $password = $_POST['password'];
 }
 
+$majlocation = $_GET['majlocation'];
+
 $newusername = $_POST['newusername'];
 $newpassword = $_POST['newpassword'];
 $employe = $_POST['employe'];
 
+$id = $_POST['id'];
 
 //Switch pour afficher la page en fonction de l'action donnée dans la Query String
 switch ($action)
@@ -29,6 +32,7 @@ switch ($action)
         snows();
         break;
     case 'achat' :
+        MajLocation($id);
         achat();
         break;
     case 'deconnexion':
