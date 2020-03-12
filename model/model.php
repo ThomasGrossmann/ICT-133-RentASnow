@@ -12,7 +12,7 @@ function getPDO()
     return new PDO('mysql:host=' . $dbhost . ';dbname=' . $dbname, $user, $pass);
 }
 
-//Fonction permettant de récupérer les données des news depuis le fichier news.json
+//Fonction permettant de récupérer les données des news depuis la base de données snows
 function getNews()
 {
     try {
@@ -28,7 +28,21 @@ function getNews()
     //return json_decode(file_get_contents("model/dataStorage/news.json"),true);
 }
 
-//Fonction permettant de récupérer les données des snowboards depuis le fichier snows.json
+function getAuthorNews()
+{
+    try {
+        $query = 'SELECT * FROM news INNER JOIN users ON news.id = user_id';
+        $statement = getPDO()->prepare($query);//prepare query
+        $statement->execute();//execute query
+        $queryResult = $statement->fetchAll(PDO::FETCH_ASSOC);//prepare result for client
+        return $queryResult;
+    } catch (PDOException $e) {
+        print "Error!: " . $e->getMessage() . "<br/>";
+        return null;
+    }
+}
+
+//Fonction permettant de récupérer les données des snowboards depuis la base de données snows
 function getSnows()
 {
     try {
@@ -44,7 +58,7 @@ function getSnows()
     //return json_decode(file_get_contents("model/dataStorage/snows.json"), true);
 }
 
-//Fonction permetttant de récupérer les données des users depuis le fichier Users.json
+//Fonction permetttant de récupérer les données des users depuis la base de données snows
 function getUsers()
 {
     try {

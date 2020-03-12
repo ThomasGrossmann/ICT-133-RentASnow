@@ -13,6 +13,7 @@ require_once 'model/model.php';
 function home()
 {
     $news = getNews();
+    $News = getAuthorNews();
     require_once 'view/home.php';
 }
 

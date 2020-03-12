@@ -21,10 +21,10 @@ $title = "RentASnow - Snowboards";
         <?php
         foreach ($snows as $snow)       //Boucle qui affiche la liste de snowboards
         {?>
-            <tr><td><?=$snow['marque']?></td><td><?=$snow['modele']?></td><td>
+            <tr><td><?=$snow['brand']?></td><td><?=$snow['model']?></td><td>
                     <form method="post" action="index.php?action=details">
                         <input type="hidden" name="id" value="<?=$snow['id']?>">
-                        <input type="image" src="view/images/<?=$snow['smallimage']?>" alt="Submit" >
+                        <input type="image" src="view/images/<?=$snow['image']?>" alt="Submit" >
                     </form>
                 </td></tr>
             <?php
