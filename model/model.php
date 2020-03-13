@@ -76,11 +76,21 @@ function getUsers()
 //Fonction permettant de ressortir un utilisateur via son username afin de vérifier la connection
 function getUser($username)
 {
-    $listUsers = getUsers();
+    /*$listUsers = getUsers();
     foreach ($listUsers as $user) {
         if ($user['username'] == $username) {
             return $user;
         }
+    }*/
+    try {
+        $query = "SELECT * FROM users WHERE id=:id";
+        $statment = getPDO()->prepare($query);//prepare query
+        $statment->execute(['id' => $id]);//execute query
+        $queryResult = $statment->fetch(PDO::FETCH_ASSOC);//prepare result for client
+        return $queryResult;
+    } catch (PDOException $e) {
+        print "Error!: " . $e->getMessage() . "<br/>";
+        return null;
     }
 }
 
