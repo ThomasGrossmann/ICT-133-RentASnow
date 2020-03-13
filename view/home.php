@@ -12,12 +12,11 @@ $title = "RentASnow - Accueil";
 <!-- ________ NEWS _____________-->
 <div class="span12">
     <h1>Les news</h1>
-    <?php foreach ($News as $onepieceofnews) { ?>
+    <?php foreach ($news as $onepieceofnews) { ?>
         <div class="row mt-4">
-            <div class="col-2"><?= date('d.M.Y', strtotime($onepieceofnews['date'])) ?>
-                <h4 class="col-4"><?= $onepieceofnews['lastname']?></h4>
-            </div>
+            <div class="col-2"><?= date('d.M.Y', strtotime($onepieceofnews['date'])) ?></div>
             <h3 class="col-4"><?= $onepieceofnews['title'] ?></h3>
+            <h4 class="col-4">Auteur : <?=$onepieceofnews['firstname']. " " .$onepieceofnews['lastname']?></h4>
         </div>
         <div class="row ml-5"><?= $onepieceofnews['text'] ?></div>
     <?php } ?>

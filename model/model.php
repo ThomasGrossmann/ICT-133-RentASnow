@@ -13,7 +13,7 @@ function getPDO()
 }
 
 //Fonction permettant de récupérer les données des news depuis la base de données snows
-function getNews()
+/*function getNews()
 {
     try {
         $query = 'SELECT * FROM news';
@@ -26,12 +26,12 @@ function getNews()
         return null;
     }
     //return json_decode(file_get_contents("model/dataStorage/news.json"),true);
-}
+}*/
 
 function getAuthorNews()
 {
     try {
-        $query = 'SELECT * FROM news INNER JOIN users ON news.id = user_id';
+        $query = 'SELECT * FROM news INNER JOIN users ON news.user_id = users.id';
         $statement = getPDO()->prepare($query);//prepare query
         $statement->execute();//execute query
         $queryResult = $statement->fetchAll(PDO::FETCH_ASSOC);//prepare result for client
@@ -46,7 +46,7 @@ function getAuthorNews()
 function getSnows()
 {
     try {
-        $query = 'SELECT * FROM snows';
+        $query = 'SELECT * FROM snowtypes INNER JOIN snows ON snowtype_id = snowtypes.id';
         $statement = getPDO()->prepare($query);
         $statement->execute();
         $queryResult = $statement->fetchAll(PDO::FETCH_ASSOC);

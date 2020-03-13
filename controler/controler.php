@@ -12,8 +12,7 @@ require_once 'model/model.php';
 //Fonction permettant de récupérer les news et d'afficher la page home
 function home()
 {
-    $news = getNews();
-    $News = getAuthorNews();
+    $news = getAuthorNews();
     require_once 'view/home.php';
 }
 

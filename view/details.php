@@ -17,7 +17,7 @@ $title = "RentASnow - Détail";
             <th>Disponible ?</th>
             <th>Marque</th>
             <th>Modèle</th>
-            <th>Date de retour</th>
+            <th>Description</th>
         </tr>
         </thead>
         <tbody>
@@ -26,11 +26,11 @@ $title = "RentASnow - Détail";
             if ($detail['id'] == $_POST['id'])//Si l'id du snowboard est égal à l'id envoyé à la Query String alors on crée le tableau et affiche les détails
         {?>
         <tr>
-            <td><?= $detail['disponible'] ?></td>
-            <td><?= $detail['marque'] ?></td>
-            <td><?= $detail['modele'] ?></td>
-            <td><?= $detail['dateretour'] ?></td>
-            <img src="view/images/<?= $detail['bigimage'] ?>">
+            <td><?= $detail['available'] ?></td>
+            <td><?= $detail['brand'] ?></td>
+            <td><?= $detail['model'] ?></td>
+            <td><?= $detail['description'] ?></td>
+            <img src="view/images/<?= $detail['photo'] ?>">
         </tr>
         </tbody>
     </table>
