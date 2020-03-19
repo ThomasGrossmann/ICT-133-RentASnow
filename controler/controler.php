@@ -31,9 +31,9 @@ function achat()
 }
 
 //Fonction permettant de récupérer la liste de snowboards et d'afficher la page details
-function details()
+function details($snowid)
 {
-    $details = getSnows();
+    $detail = getSnow($snowid);
     require_once 'view/details.php';
 }
 

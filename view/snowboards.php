@@ -29,12 +29,7 @@ $title = "RentASnow - Snowboards";
                 <tr>
                     <td><?= $snow['brand'] ?></td>
                     <td><?= $snow['model'] ?></td>
-                    <td>
-                        <form method="post" action="index.php?action=details">
-                            <input type="hidden" name="id" value="<?= $snow['id'] ?>">
-                            <input type="image" src="view/images/<?= $snow['photo'] ?>" alt="Submit" width="30%" height="40%">
-                        </form>
-                    </td>
+                    <td><a href="index.php?action=details&id=<?=$snow['id']?>"><img src="view/images/<?= $snow['photo'] ?>"></a></td>
                 </tr>
                 <?php
             }

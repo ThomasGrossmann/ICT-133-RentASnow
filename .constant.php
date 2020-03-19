@@ -5,10 +5,9 @@
  * Date : 07.02.2020
  */
 
-$user = "phpApplication";
+$user = "root";
 $pass = 'Pa$$w0rd';
 $dbhost = 'localhost';
 $dbname = 'snows';
-
 
 ?>

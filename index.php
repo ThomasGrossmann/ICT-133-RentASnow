@@ -42,7 +42,8 @@ switch ($action)
         connect($username, $password);      //Donne le username et le password en tant que paramètres de la fonction pour se connecter
         break;
     case 'details' :
-        details();
+        $snowid = $_GET['id'];
+        details($snowid);
         break;
     case 'login' :
         login();

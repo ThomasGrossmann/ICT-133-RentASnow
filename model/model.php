@@ -28,6 +28,21 @@ function getPDO()
     //return json_decode(file_get_contents("model/dataStorage/news.json"),true);
 }*/
 
+function getSnow($snowid)
+{
+    try {
+        $query = 'SELECT * FROM snowtypes WHERE id =:snowid';
+        $statement = getPDO()->prepare($query);
+        $statement->execute(['snowid' => $snowid]);
+        $queryResult = $statement->fetch(PDO::FETCH_ASSOC);
+        return $queryResult;
+    } catch (PDOException $e) {
+        print "Error!: " . $e->getMessage() . "<br/>";
+        return null;
+    }
+    //return json_decode(file_get_contents("model/dataStorage/snows.json"), true);
+}
+
 function getAuthorNews()
 {
     try {
@@ -46,7 +61,7 @@ function getAuthorNews()
 function getSnows()
 {
     try {
-        $query = 'SELECT * FROM snowtypes INNER JOIN snows ON snowtype_id = snowtypes.id';
+        $query = 'SELECT * FROM snowtypes';
         $statement = getPDO()->prepare($query);
         $statement->execute();
         $queryResult = $statement->fetchAll(PDO::FETCH_ASSOC);
