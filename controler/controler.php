@@ -7,8 +7,6 @@
 
 require_once 'model/model.php';
 
-// This file contains nothing but functions
-
 //Fonction permettant de récupérer les news et d'afficher la page home
 function home()
 {
@@ -56,11 +54,13 @@ function login()
     require_once 'view/login.php';
 }
 
+//Fonction permettant d'afficher la page d'inscription
 function newAccount()
 {
     require_once 'view/inscription.php';
 }
 
+//Fonction permettant d'inscrire un nouvel utilisateur
 function inscription($newusername, $newpassword, $employe)
 {
     //$hash = password_hash($newpassword, PASSWORD_DEFAULT);        //Tentative de hash du password

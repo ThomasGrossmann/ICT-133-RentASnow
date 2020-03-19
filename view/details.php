@@ -14,7 +14,6 @@ $title = "RentASnow - Détail";
     <table class='table table-bordered'>
         <thead>
         <tr>
-            <th>Disponible ?</th>
             <th>Marque</th>
             <th>Modèle</th>
             <th>Description</th>
@@ -22,14 +21,26 @@ $title = "RentASnow - Détail";
         </thead>
         <tbody>
         <tr>
-            <td><?= $detail['available'] ?></td>
             <td><?= $detail['brand'] ?></td>
             <td><?= $detail['model'] ?></td>
             <td><?= $detail['description'] ?></td>
-            <img src="view/images/<?= $detail['photo'] ?>">
         </tr>
         </tbody>
     </table>
+    <div>
+        <div>
+            <img src="view/images/<?= $detail['photo'] ?>" class="imagedetail">
+        </div>
+        <div>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td>Snow différent</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
 
 <script src="assets/carousel/jquery.carouFredSel-6.2.0-packed.js" type="text/javascript"></script>

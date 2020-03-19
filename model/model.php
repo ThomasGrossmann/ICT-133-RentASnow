@@ -12,22 +12,7 @@ function getPDO()
     return new PDO('mysql:host=' . $dbhost . ';dbname=' . $dbname, $user, $pass);
 }
 
-//Fonction permettant de récupérer les données des news depuis la base de données snows
-/*function getNews()
-{
-    try {
-        $query = 'SELECT * FROM news';
-        $statement = getPDO()->prepare($query);//prepare query
-        $statement->execute();//execute query
-        $queryResult = $statement->fetchAll(PDO::FETCH_ASSOC);//prepare result for client
-        return $queryResult;
-    } catch (PDOException $e) {
-        print "Error!: " . $e->getMessage() . "<br/>";
-        return null;
-    }
-    //return json_decode(file_get_contents("model/dataStorage/news.json"),true);
-}*/
-
+//Fonction permettant de récupérer un seul snow depuis la base de données snows
 function getSnow($snowid)
 {
     try {
@@ -40,9 +25,9 @@ function getSnow($snowid)
         print "Error!: " . $e->getMessage() . "<br/>";
         return null;
     }
-    //return json_decode(file_get_contents("model/dataStorage/snows.json"), true);
 }
 
+//Fonction permettant de récupérer l'auteur des news depuis la base de données snows
 function getAuthorNews()
 {
     try {
@@ -70,7 +55,6 @@ function getSnows()
         print "Error!: " . $e->getMessage() . "<br/>";
         return null;
     }
-    //return json_decode(file_get_contents("model/dataStorage/snows.json"), true);
 }
 
 //Fonction permetttant de récupérer les données des users depuis la base de données snows
@@ -89,7 +73,7 @@ function getUsers()
 }
 
 //Fonction permettant de ressortir un utilisateur via son username afin de vérifier la connection
-function getUser($username)
+function getUser($id)
 {
     /*$listUsers = getUsers();
     foreach ($listUsers as $user) {
