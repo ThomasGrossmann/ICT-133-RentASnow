@@ -36,15 +36,19 @@ function details($snowid)
 }
 
 //Fonction permettant de se connecter au site, de l'enregistrer dans la session et de revenir à la page home
-function connect($username, $password)
+function connect($email, $password)
 {
-    $User = getUser($username, $password);
-    if ($User['password'] == $password && $User['username'] == $username) {     //if (password_verify($password, $User['password']))
-        $_SESSION['username'] = $username;
-        $_SESSION['password'] = $password;
-        home();
-    } else {
-        login();
+    $user = getUserByEmail($email);
+    if (password_verify($password, $user['password']))
+    {
+        unset($user['password']);
+        $_SESSION['user'] = $user;
+        $_SESSION['flashmessage'] = 'Bienvenue '.$user['firstname'];
+        require_once 'view/home.php';
+    } else
+    {
+        $_SESSION['flashmessage'] = "Pas d'accord...";
+        require_once 'view/login.php';
     }
 }
 
@@ -76,9 +80,7 @@ function inscription($newusername, $newpassword, $employe)
 //Fonction permettant de supprimer la session actuelle et d'afficher la page home
 function deconnexion()
 {
-    unset($_SESSION['username']);
-    unset($_SESSION['password']);
-    unset($_SESSION['employe']);
+    unset($_SESSION['user']);
     home();
 }
 
