@@ -87,7 +87,7 @@ CREATE TABLE `snows` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `code` varchar(6) NOT NULL,
   `length` int(4) unsigned NOT NULL,
-  `state` tinyint(4) unsigned NOT NULL DEFAULT '0' COMMENT '0 = new\n1 = good\n2 = old\n4 = dead\n',
+  `state` tinyint(4) unsigned NOT NULL DEFAULT '0' COMMENT '1 = new\n2 = good\n3 = old\n4 = dead',
   `snowtype_id` int(11) NOT NULL,
   `available` tinyint(4) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`),

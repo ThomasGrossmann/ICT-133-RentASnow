@@ -58,7 +58,7 @@
                             ?>
                             <li><a href="index.php?action=deconnexion">Se deconnecter</a></li>
                         <?php } else { ?>
-                            <li><a href="index.php?action=connect">Se connecter</a></li>
+                            <li><a href="index.php?action=login">Se connecter</a></li>
                         <?php } ?>
                     </ul>
                 </div>

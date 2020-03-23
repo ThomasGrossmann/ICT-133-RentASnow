@@ -57,47 +57,20 @@ function getSnows()
     }
 }
 
-//Fonction permetttant de récupérer les données des users depuis la base de données snows
-function getUsers()
-{
-    try {
-        $query = 'SELECT * FROM users';
-        $statement = getPDO()->prepare($query);
-        $statement->execute();
-        $queryResult = $statement->fetchAll(PDO::FETCH_ASSOC);
-        return $queryResult;
-    } catch (PDOException $e) {
-        print "Error!: " . $e->getMessage() . "<br/>";
-    }
-    //return json_decode(file_get_contents("model/dataStorage/Users.json"), true);
-}
-
 //Fonction permettant de ressortir un utilisateur via son username afin de vérifier la connection
 function getUserByEmail($email)
 {
+    require ".constant.php";
     try {
-        $query = "SELECT * FROM users WHERE email =:email";
-        $statment = getPDO()->prepare($query);//prepare query
-        $statment->execute(['email' => $email]);//execute query
-        $queryResult = $statment->fetch(PDO::FETCH_ASSOC);//prepare result for client
+        $query = 'SELECT * FROM users WHERE email=:email';
+        $statement = getPDO()->prepare($query);//prepare query
+        $statement->execute(['email' => $email]);//execute query
+        $queryResult = $statement->fetch(PDO::FETCH_ASSOC);//prepare result for client
         return $queryResult;
     } catch (PDOException $e) {
         print "Error!: " . $e->getMessage() . "<br/>";
         return null;
     }
-}
-
-//Fonction permettant de créer un nouvel utilisateur et de l'inscrire dans le fichier Users.json
-function NewUser($newusername, $newpassword, $employe)
-{
-    $User = getUsers();
-    $addUser = [
-        'username' => $newusername,
-        'password' => $newpassword,
-        'employe' => $employe
-    ];
-    $User[] = $addUser;
-    file_put_contents("model/dataStorage/Users.json", json_encode($User));
 }
 
 /*Fonction permettant de changer l'état d'un snowboard en non disponible

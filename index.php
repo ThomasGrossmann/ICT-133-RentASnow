@@ -12,14 +12,6 @@ if (isset($_GET['action'])) {
     $action = $_GET['action'];  //Récupère l'action dans la Query string
 }
 
-$majlocation = $_GET['majlocation'];
-
-$newusername = $_POST['newusername'];
-$newpassword = $_POST['newpassword'];
-$employe = $_POST['employe'];
-
-$id = $_POST['id'];
-var_dump($_SESSION);
 //Switch pour afficher la page en fonction de l'action donnée dans la Query String
 switch ($action)
 {
@@ -36,7 +28,7 @@ switch ($action)
     case'connect' :
         $email = $_POST['email'];
         $password = $_POST['password'];
-        connect($email, $password);      //Donne le username et le password en tant que paramètres de la fonction pour se connecter
+        connect($email, $password);      //Donne l'email et le password en tant que paramètres de la fonction pour se connecter
         break;
     case 'details' :
         $snowid = $_GET['id'];
@@ -49,7 +41,7 @@ switch ($action)
         newAccount();
         break;
     case 'inscription':
-        inscription($newusername, $newpassword, $employe);
+        //inscription($newusername, $newpassword, $employe);
         break;
     default :
         home();

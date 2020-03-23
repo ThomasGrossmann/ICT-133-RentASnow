@@ -38,16 +38,13 @@ function details($snowid)
 //Fonction permettant de se connecter au site, de l'enregistrer dans la session et de revenir à la page home
 function connect($email, $password)
 {
-    $user = getUserByEmail($email);
-    if (password_verify($password, $user['password']))
+    $User = getUserByEmail($email);
+    if (password_verify($password, $User['password']))
     {
-        unset($user['password']);
-        $_SESSION['user'] = $user;
-        $_SESSION['flashmessage'] = 'Bienvenue '.$user['firstname'];
+        $_SESSION['user'] = $User;
         require_once 'view/home.php';
     } else
     {
-        $_SESSION['flashmessage'] = "Pas d'accord...";
         require_once 'view/login.php';
     }
 }
