@@ -34,9 +34,10 @@ $title = "RentASnow - Détail";
         <div>
             <table class="table table-bordered">
                 <tbody>
+                    <?php foreach ( as $item) { ?>
                     <tr>
-                        <td>Snow différent</td>
-                    </tr>
+                        <td></td>
+                    </tr><?php}?>
                 </tbody>
             </table>
         </div>
