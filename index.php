@@ -41,7 +41,13 @@ switch ($action)
         newAccount();
         break;
     case 'inscription':
-        //inscription($newusername, $newpassword, $employe);
+        $newemail = $_POST['newemail'];
+        $newpassword = $_POST['newpassword'];
+        $newfirstname = $_POST['newfirstname'];
+        $newlastname = $_POST['newlastname'];
+        $newphone = $_POST['newphone'];
+        $employe = $_POST['employe'];
+        inscription($newemail, $newpassword, $newfirstname, $newlastname, $newphone, $employe);
         break;
     default :
         home();

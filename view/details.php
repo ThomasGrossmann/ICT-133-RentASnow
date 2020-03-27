@@ -29,17 +29,7 @@ $title = "RentASnow - Détail";
     </table>
     <div>
         <div>
-            <img src="view/images/<?= $detail['photo'] ?>" class="imagedetail">
-        </div>
-        <div>
-            <table class="table table-bordered">
-                <tbody>
-                    <?php foreach ( as $item) { ?>
-                    <tr>
-                        <td></td>
-                    </tr><?php}?>
-                </tbody>
-            </table>
+            <img src="view/images/big/<?= $detail['photo'] ?>" class="imagedetail">
         </div>
     </div>
 </div>

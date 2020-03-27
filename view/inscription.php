@@ -12,10 +12,16 @@ $title = "RentASnow - Inscription";
 <div class="span12">
     <h1>Création du compte</h1>
     <form class="form-group" method="post" action="index.php?action=inscription">
-        <label>Nom d'utilisateur</label>
-        <input type="text" class="form-group form-control" name="newusername" required>
+        <label>Email</label>
+        <input type="email" class="form-group form-control" name="newemail" required>
         <label>Mot de passe</label>
         <input type="password" class="form-group form-control" name="newpassword" required>
+        <label>Prénom</label>
+        <input type="text" class="form-group form-control" name="newfirstname" required>
+        <label>Nom</label>
+        <input type="text" class="form-group form-control" name="newlastname" required>
+        <label>No Téléphone</label>
+        <input type="number" class="form-group form-control" name="newphone" required>
         <label>Employé dans l'entreprise ?</label>
         <input type="checkbox" name="employe"><br>
         <button type="submit" class="btn btn-primary">Créer son compte</button>

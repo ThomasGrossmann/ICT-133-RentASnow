@@ -13,12 +13,11 @@ $title = "RentASnow - Snowboards";
     <div class="span12">
         <h1>Nos snowboards</h1>
         <table class="table table-bordered">
-            <h3>Nous proposons actuellement <?= count($snows) ?> snowboards</h3>
             <thead>
             <tr>
-                <th width="20%" >Marque</th>
-                <th width="20%" >Modèle</th>
-                <th width="60%" >(Cliquer sur l'image pour plus de détails)</th>
+                <th width="30%" >Marque</th>
+                <th width="30%" >Modèle</th>
+                <th width="40%" >(Cliquer sur l'image pour plus de détails)</th>
             </tr>
             </thead>
             <tbody>
@@ -29,7 +28,7 @@ $title = "RentASnow - Snowboards";
                 <tr>
                     <td><?= $snow['brand'] ?></td>
                     <td><?= $snow['model'] ?></td>
-                    <td><a href="index.php?action=details&id=<?=$snow['id']?>"><img src="view/images/<?= $snow['photo'] ?>"></a></td>
+                    <td><a href="index.php?action=details&id=<?=$snow['id']?>"><img src="view/images/small/<?= $snow['photo'] ?>"></a></td>
                 </tr>
                 <?php
             }

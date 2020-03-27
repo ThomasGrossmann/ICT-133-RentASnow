@@ -73,6 +73,7 @@ function getUserByEmail($email)
     }
 }
 
+//Fonction permettant de récupérer tous les users depuis la base de données snows
 function getUsers()
 {
     require ".constant.php";
@@ -88,6 +89,7 @@ function getUsers()
     }
 }
 
+//Cette fonction est là pour éviter que ça change le password à chaque fois
 function changePassword()
 {
     $users = getUsers();

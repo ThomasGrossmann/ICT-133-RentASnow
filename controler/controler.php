@@ -39,13 +39,14 @@ function details($snowid)
 function connect($email, $password)
 {
     $User = getUserByEmail($email);
-    if (password_verify($password, $User['password']))
-    {
+    if (password_verify($password, $User['password'])) {
         $_SESSION['user'] = $User;
-        require_once 'view/home.php';
-    } else
-    {
-        require_once 'view/login.php';
+        $_SESSION['flashmessage'] = 'Bienvenue '.$User['firstname'].' !';
+        home();
+    } else {
+        unset($_SESSION['user']);
+        $_SESSION['flashmessage'] = 'Login incorrect :(';
+        login();
     }
 }
 
@@ -62,16 +63,9 @@ function newAccount()
 }
 
 //Fonction permettant d'inscrire un nouvel utilisateur
-function inscription($newusername, $newpassword, $employe)
+function inscription($newemail, $newpassword, $newfirstname, $newlastname, $newphone, $employe)
 {
-    //$hash = password_hash($newpassword, PASSWORD_DEFAULT);        //Tentative de hash du password
-    if ($employe == "on") {
-        $employe = true;
-    } else {
-        $employe = false;
-    }
-    NewUser($newusername, $newpassword, $employe);
-    login();
+
 }
 
 //Fonction permettant de supprimer la session actuelle et d'afficher la page home

@@ -1,4 +1,5 @@
 ﻿<!DOCTYPE HTML>
+<?php require_once "helpers/helpers.php"?>
 <html>
 <head>
     <meta charset="utf-8">
@@ -89,6 +90,7 @@
             <div class="divPanel notop page-content">
                 <div class="row-fluid">
                     <div class="span12" id="divMain">
+                        <?= getFlashMessage() ?>
                         <?= $content; ?>
                     </div>
                 </div>
