@@ -73,6 +73,40 @@ function getUserByEmail($email)
     }
 }
 
+function getUsers()
+{
+    require ".constant.php";
+    try {
+        $query = 'SELECT * FROM users';
+        $statement = getPDO()->prepare($query);//prepare query
+        $statement->execute();//execute query
+        $queryResult = $statement->fetchAll(PDO::FETCH_ASSOC);//prepare result for client
+        return $queryResult;
+    } catch (PDOException $e) {
+        print "Error!: " . $e->getMessage() . "<br/>";
+        return null;
+    }
+}
+
+function changePassword()
+{
+    $users = getUsers();
+    foreach ($users as $user)
+    {
+        $hash = password_hash($user['firstname'], PASSWORD_DEFAULT);
+        try {
+            $query = 'UPDATE users SET password =:hash WHERE id=:id';
+            $statement = getPDO()->prepare($query);//prepare query
+            $statement->execute(['hash' => $hash, 'id' => $user['id']]);//execute query
+            $queryResult = $statement->fetchAll(PDO::FETCH_ASSOC);//prepare result for client
+        } catch (PDOException $e) {
+            print "Error!: " . $e->getMessage() . "<br/>";
+            return null;
+        }
+    }
+}
+
+
 /*Fonction permettant de changer l'état d'un snowboard en non disponible
 function MajLocation($id)
 {
