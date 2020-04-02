@@ -34,6 +34,10 @@ switch ($action)
         $snowid = $_GET['id'];
         details($snowid);
         break;
+    case 'detailsRealSnow' :
+        $snowid = $_GET['id'];
+        detailsRealSnow($snowid);
+        break;
     case 'login' :
         login();
         break;

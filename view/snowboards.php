@@ -14,11 +14,7 @@ $title = "RentASnow - Snowboards";
         <h1>Nos snowboards</h1>
         <table class="table table-bordered">
             <thead>
-            <tr>
-                <th width="30%" >Marque</th>
-                <th width="30%" >Modèle</th>
-                <th width="40%" >(Cliquer sur l'image pour plus de détails)</th>
-            </tr>
+            <th>Cliquer sur l'image pour plus de détails</th>
             </thead>
             <tbody>
             <?php
@@ -26,9 +22,7 @@ $title = "RentASnow - Snowboards";
             {
                 ?>
                 <tr>
-                    <td><?= $snow['brand'] ?></td>
-                    <td><?= $snow['model'] ?></td>
-                    <td><a href="index.php?action=details&id=<?=$snow['id']?>"><img src="view/images/small/<?= $snow['photo'] ?>"></a></td>
+                    <td><a href="index.php?action=details&id=<?= $snow['id'] ?>"><img src="view/images/small/<?= $snow['photo'] ?>"></a><br><h2><?= $snow['brand']." ".$snow['model']?></h2></td>
                 </tr>
                 <?php
             }

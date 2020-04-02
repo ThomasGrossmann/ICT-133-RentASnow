@@ -31,8 +31,15 @@ function achat()
 //Fonction permettant de récupérer la liste de snowboards et d'afficher la page details
 function details($snowid)
 {
-    $detail = getSnow($snowid);
+    $snowtype = getSnowType($snowid);
+    $snows = getSnowsOfType($snowid);
     require_once 'view/details.php';
+}
+
+function detailsRealSnow($snowid)
+{
+    $snow = getRealSnow($snowid);
+    require_once 'view/detailsRealSnow.php';
 }
 
 //Fonction permettant de se connecter au site, de l'enregistrer dans la session et de revenir à la page home

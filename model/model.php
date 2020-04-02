@@ -13,10 +13,24 @@ function getPDO()
 }
 
 //Fonction permettant de récupérer un seul snow depuis la base de données snows
-function getSnow($snowid)
+function getSnowType($snowid)
 {
     try {
         $query = 'SELECT * FROM snowtypes WHERE id =:snowid';
+        $statement = getPDO()->prepare($query);
+        $statement->execute(['snowid' => $snowid]);
+        $queryResult = $statement->fetch(PDO::FETCH_ASSOC);
+        return $queryResult;
+    } catch (PDOException $e) {
+        print "Error!: " . $e->getMessage() . "<br/>";
+        return null;
+    }
+}
+
+function getRealSnow($snowid)
+{
+    try {
+        $query = 'SELECT * FROM snows INNER JOIN snowtypes on snowtype_id = snowtypes.id WHERE snows.id =:snowid';
         $statement = getPDO()->prepare($query);
         $statement->execute(['snowid' => $snowid]);
         $queryResult = $statement->fetch(PDO::FETCH_ASSOC);
@@ -108,6 +122,19 @@ function changePassword()
     }
 }
 
+function getSnowsOfType($snowid)
+{
+    try {
+        $query = 'SELECT * FROM snows WHERE snowtype_id =:snowid';
+        $statement = getPDO()->prepare($query);
+        $statement->execute(['snowid' => $snowid]);
+        $queryResult = $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $queryResult;
+    } catch (PDOException $e) {
+        print "Error!: " . $e->getMessage() . "<br/>";
+        return null;
+    }
+}
 
 /*Fonction permettant de changer l'état d'un snowboard en non disponible
 function MajLocation($id)

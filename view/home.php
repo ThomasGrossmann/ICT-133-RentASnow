@@ -8,6 +8,24 @@
 ob_start();
 $title = "RentASnow - Accueil";
 ?>
+<!-- ________ SLIDER_____________-->
+<div class="row-fluid">
+    <div class="camera_full_width">
+        <div id="camera_wrap">
+            <div data-src="view/images/slider/5.jpg">
+                <div class="camera_caption fadeFromBottom cap1">Les derniers modèles toujours à disposition.
+                </div>
+            </div>
+            <div data-src="view/images/slider/1.jpg">
+                <div class="camera_caption fadeFromBottom cap2">Découvrez des paysages fabuleux avec des
+                    sensations.
+                </div>
+            </div>
+            <div data-src="view/images/slider/2.jpg"></div>
+        </div>
+        <br style="clear:both"/>
+    </div>
+</div>
 
 <!-- ________ NEWS _____________-->
 <div class="span12">
