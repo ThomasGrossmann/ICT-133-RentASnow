@@ -156,6 +156,20 @@ function updateSnow($snowdata)
         return null;
     }
 }
+
+function withdraw($snowid)
+{
+    try {
+        $query = "UPDATE snows SET available = false WHERE id= :snowid";
+        $statement = getPDO()->prepare($query);
+        $statement->execute(['snowid' => $snowid]);
+        return true;
+    } catch (PDOException $e) {
+        print "Error!: " . $e->getMessage() . "<br/>";
+        $_SESSION['flashmessage'] = "Erreur lors de l'enregistrement";
+        return null;
+    }
+}
 /*Fonction permettant de changer l'état d'un snowboard en non disponible
 function MajLocation($id)
 {

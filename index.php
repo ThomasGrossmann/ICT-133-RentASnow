@@ -48,6 +48,15 @@ switch ($action)
         $snowid = $_POST['snowid'];
         detailsRealSnow($snowid);
         break;
+    case 'putInCart' :
+        $snowid = $_GET['snowid'];
+        putInCart($snowid);
+        snows();
+        break;
+    case 'viewCart' :
+        $cartContent = $_SESSION['panier'];
+        require_once 'view/cart.php';
+        break;
     case 'login' :
         login();
         break;

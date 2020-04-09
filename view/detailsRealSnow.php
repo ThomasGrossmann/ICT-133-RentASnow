@@ -23,6 +23,9 @@ require_once 'helpers/helpers.php';
             <tr><th>Disponible</th><td><?= getTextAvailable($snow['available']) ?></td></tr>
     </table>
     <a href="?action=editDetailsSnow&snowid=<?= $snowid ?>" class="btn btn-primary">Modifier</a>
+    <?php if ($snow['available'] == 1) { ?>
+        <a href="?action=putInCart&snowid=<?= $snowid ?>" class="btn btn-success">Mettre dans le panier</a>
+    <?php } ?>
 </div>
 
 <script src="assets/carousel/jquery.carouFredSel-6.2.0-packed.js" type="text/javascript"></script>

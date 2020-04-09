@@ -62,6 +62,7 @@
                         <?php } else { ?>
                             <li><a href="index.php?action=login">Se connecter</a></li>
                         <?php } ?>
+                        <li><?= cartButton() ?></li>
                     </ul>
                 </div>
             </div>

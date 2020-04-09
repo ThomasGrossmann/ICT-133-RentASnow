@@ -48,6 +48,14 @@ function editDetailsSnow($snowid)
     require_once 'view/editDetailsSnow.php';
 }
 
+function putInCart($snowid)
+{
+    $snow = getRealSnow($snowid);
+    $_SESSION['panier'][] = $snow;
+    withdraw($snowid);
+    $_SESSION['flashmessage'] = "Ce ".$snow['brand']." ".$snow['model']." a bien été ajouté au panier";
+}
+
 //Fonction permettant de se connecter au site, de l'enregistrer dans la session et de revenir à la page home
 function connect($email, $password)
 {

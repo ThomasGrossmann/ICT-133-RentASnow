@@ -45,4 +45,12 @@ function getTextAvailable($available)
     }
 }
 
+function cartButton()
+{
+    if (!isset($_SESSION['panier'])) {
+        return "<a disabled>Panier</a>";
+    } else {
+        return "<a href='?action=viewCart'>Panier</a>";
+    }
+}
 ?>
