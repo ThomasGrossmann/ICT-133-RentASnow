@@ -59,10 +59,10 @@
                         <?php if (isset($_SESSION['user'])) {
                             ?>
                             <li><a href="index.php?action=deconnexion">Déconnecter <?= $_SESSION['user']['firstname']. " " .$_SESSION['user']['lastname']?></a></li>
+                            <li><?= cartButton() ?></li>
                         <?php } else { ?>
                             <li><a href="index.php?action=login">Se connecter</a></li>
                         <?php } ?>
-                        <li><?= cartButton() ?></li>
                     </ul>
                 </div>
             </div>
