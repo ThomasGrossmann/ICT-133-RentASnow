@@ -42,6 +42,12 @@ function detailsRealSnow($snowid)
     require_once 'view/detailsRealSnow.php';
 }
 
+function editDetailsSnow($snowid)
+{
+    $snow = getRealSnow($snowid);
+    require_once 'view/editDetailsSnow.php';
+}
+
 //Fonction permettant de se connecter au site, de l'enregistrer dans la session et de revenir à la page home
 function connect($email, $password)
 {

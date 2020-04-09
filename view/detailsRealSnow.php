@@ -22,6 +22,7 @@ require_once 'helpers/helpers.php';
             <tr><th>État</th><td><?= getTextState($snow['state']) ?></td></tr>
             <tr><th>Disponible</th><td><?= getTextAvailable($snow['available']) ?></td></tr>
     </table>
+    <a href="?action=editDetailsSnow&snowid=<?= $snowid ?>" class="btn btn-primary">Modifier</a>
 </div>
 
 <script src="assets/carousel/jquery.carouFredSel-6.2.0-packed.js" type="text/javascript"></script>

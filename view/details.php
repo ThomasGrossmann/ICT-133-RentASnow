@@ -10,7 +10,6 @@ $title = "RentASnow - Détail";
 require_once 'helpers/helpers.php';
 ?>
 <!-- ________ DETAILS _____________-->
-<h1>Voici quelques détails en plus.</h1>
 <div class="text-center">
     <img src="view/images/big/<?= $snowtype['photo'] ?>" class="imagedetail">
     <h2><?= $snowtype['brand'] . " " . $snowtype['model'] ?></h2>

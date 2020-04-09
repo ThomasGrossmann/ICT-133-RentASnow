@@ -136,6 +136,26 @@ function getSnowsOfType($snowid)
     }
 }
 
+function updateSnow($snowdata)
+{
+    if (isset($snowdata['available']))
+    {
+        $snowdata['available'] = 1;
+    }
+    else
+    {
+        $snowdata['available'] = 0;
+    }
+    try {
+        $query = "UPDATE snows SET code= :code, length= :length, state= :state, available= :available WHERE id=:snowid";
+        $statement = getPDO()->prepare($query);
+        $statement->execute($snowdata);
+        return $queryResult;
+    } catch (PDOException $e) {
+        print "Error!: " . $e->getMessage() . "<br/>";
+        return null;
+    }
+}
 /*Fonction permettant de changer l'état d'un snowboard en non disponible
 function MajLocation($id)
 {

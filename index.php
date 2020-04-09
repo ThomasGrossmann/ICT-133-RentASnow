@@ -38,6 +38,16 @@ switch ($action)
         $snowid = $_GET['id'];
         detailsRealSnow($snowid);
         break;
+    case 'editDetailsSnow' :
+        $snowid = $_GET['snowid'];
+        editDetailsSnow($snowid);
+        break;
+    case 'saveSnowDetails' :
+        $_SESSION['flashmessage'] = "Le snowboard a bien été modifié";
+        updateSnow($_POST);
+        $snowid = $_POST['snowid'];
+        detailsRealSnow($snowid);
+        break;
     case 'login' :
         login();
         break;
